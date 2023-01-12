@@ -60,6 +60,7 @@ forgotPassReq.belongsTo(User)
 User.hasMany(forgotPassReq)
 
 
+// cicd deployments 
 
 sequelize
 .sync()
