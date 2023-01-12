@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRACK YOUR MONEY</title>
+</head>
+<link rel="stylesheet" href="style.css">
+<body>
+    <div id="complete" style="display: flex;">
+        <div id="image">
+            <div class="heading">
+                <h1>TRACK YOUR MONEY</h1>
+            </div>
+            <img src="https://images.unsplash.com/photo-1553729459-efe14ef6055d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="">
+            <br>
+            <br>
+            <div>
+                <p>stuck with checking on daily expenses then you are at the right place, "TRACK YOUR MONEY" is your one stop destination to monitor all your expenses and study them.</p>
+            </div>
+        </div>
+        
+        <div id="details">
+         <div id="sign-in">
+            <h3 class="sign-para">USER LOGIN </h3>
+            <h3 class="sign-para">Please Enter your Email-id and Password</h3>
+            <form action="" id="form">
+                <label for="email">E-MAIL : </label>
+                <input type="text" name="email" placeholder="email" id="email">
+                <label for="passowrd">PASSWORD : </label>
+            <input  type="password" name="passowrd" id="password" placeholder="enter password">
+        
+            <input class="btn" id="login-btn" type="submit" value="LOG IN">
+            </form>
+            
+         </div>  
+         <br>
+         <br>
+         <div id="log-in">
+        <h3 class="para">New User? sign up and create your account </h3>
+        <button class="btn" id="signup-btn"><a href="index.html">SIGN-UP</a></button>
+         </div>
+         <h3 id="errorheading" ></h3>
+   <div id="forgot">
+    <h3>FORGOT PASSWORD?click to reset to change password</h3>
+    <button class="btn" id="reset">RESET</button>
+    </div>
+        </div>
+     
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.2.0/axios.min.js"></script>
+        <script src="login.js"></script>
+</body>
+</html>

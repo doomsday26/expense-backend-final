@@ -13,7 +13,12 @@ const accessLogStream=fs.createWriteStream(path.join(__dirname,'access.log'),{fl
 app.use(bodyparser.json())
 app.use(cors())
 app.use(compression())
-app.use(helmet())
+app.use(
+    helmet({
+      contentSecurityPolicy: false,
+    })
+  );
+//app.use(helmet({   contentSecurityPolicy: {  useDefaults: true, directives: { 'script-src': ["'self'", "https://whitelisted-domain.com"]  }  }  }))
 app.use(morgan('combined',{stream:accessLogStream}))
 const Expense= require('./models/expense')
 const Order= require('./models/orders')
@@ -23,13 +28,25 @@ const loginRoutes=require('./routes/login')
 const expenseRoutes= require('./routes/expenseRoute')
 const purchaseRoutes=require('./routes/purchase');
 const forgotPassReq = require('./models/forgotPass');
+
+
+// app.use(
+//     helmet.contentSecurityPolicy({
+//       useDefaults: true,
+//       directives: {
+//         "img-src": ["'self'", "https: data:"]
+//       }
+//     })
+//   )
 app.use('/expense',expenseRoutes)
 app.use('/purchase',purchaseRoutes)
-
-
 app.use(loginRoutes)
-app.post('/user/signup',userControllers.saveUser)
 
+app.post('/user/signup',userControllers.saveUser)
+app.use((req,res)=>{
+    console.log('url called>>>> ', req.url);
+    res.sendFile(path.join(__dirname,`views/${req.url}`))
+})
 
 
 Expense.belongsTo(User,{constraints:true,onDelete:'CASCADE'}),
