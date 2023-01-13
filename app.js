@@ -60,6 +60,7 @@ forgotPassReq.belongsTo(User)
 User.hasMany(forgotPassReq)
 
 
+// cicd deployments 
 
 sequelize
 .sync()
@@ -75,3 +76,5 @@ app.listen(process.env.PORT,()=>{
 })
 
 //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  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
+
+///this is the latest file
