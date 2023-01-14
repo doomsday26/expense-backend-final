@@ -2,7 +2,8 @@ let form = document.getElementById("form");
 let email = document.getElementById("email");
 let name = document.getElementById("name");
 let password = document.getElementById("password");
-let http = "http://localhost:3000";
+let FRONTEND_HOST='localhost'
+let http = `http://${FRONTEND_HOST}:3000`;
 form.addEventListener("submit", login);
 document.getElementById("reset").addEventListener("click", forgot);
 window.addEventListener('DOMContentLoaded', (event) => {
