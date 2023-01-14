@@ -17,8 +17,9 @@ let allReport = document.getElementById("allReport");
 allReport.addEventListener("click", downloadAll);
 // premiumbtn.addEventListener("click", premiumMembership);
 let i = 0;
-const http = "http://localhost:3000/expense/";
-const http2 = "http://localhost:3000";
+let FRONTEND_HOST='localhost'
+const http = `http://${FRONTEND_HOST}:3000/expense/`;
+const http2 = `http://${FRONTEND_HOST}:3000`;
 
 
 window.addEventListener('DOMContentLoaded', (event) => {
