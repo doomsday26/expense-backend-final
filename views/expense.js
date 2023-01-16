@@ -298,7 +298,7 @@ await load();
 
 async function displayLeaderBoard() {
   axios
-    .get("http://localhost:3000/premium")
+    .get(`http://${FRONTEND_HOST}:3000/premium`)
     .then((result) => {
       let list = document.getElementById("leader-list");
       while (list.firstChild) {
@@ -330,7 +330,7 @@ function hideReport(){
 async function displayReport() {
   console.log("calling display reports");
   await axios
-    .get("http://localhost:3000/expense/report", {
+    .get(`http://${FRONTEND_HOST}:3000/expense/report`, {
       headers: { Authourization: token },
     })
     .then((result) => {
@@ -379,7 +379,7 @@ async function displayReport() {
 
 function downloadReport() {
   axios
-    .get("http://localhost:3000/expense/downloadreport", {
+    .get(`http://${FRONTEND_HOST}:3000/expense/downloadreport`, {
       headers: { Authourization: token },
     })
     .then((result) => {
@@ -396,7 +396,7 @@ function downloadReport() {
 
 async function downloadAll() {
   await axios
-    .get("http://localhost:3000/expense/downloadAllreport", {
+    .get(`http://${FRONTEND_HOST}:3000/expense/downloadAllreport`, {
       headers: { Authourization: token },
     })
     .then((result) => {
@@ -423,7 +423,7 @@ async function downloadPreviousData(e) {
   if (e.target.className == "previousReport") {
     await axios
       .get(
-        `http://localhost:3000/expense/downloadOldreport/${e.target.innerText}`,
+        `http://${FRONTEND_HOST}:3000/expense/downloadOldreport/${e.target.innerText}`,
         {
           headers: { Authourization: token },
         }
